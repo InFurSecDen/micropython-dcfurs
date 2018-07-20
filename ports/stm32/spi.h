@@ -83,4 +83,15 @@ void spi_transfer(const spi_t *self, size_t len, const uint8_t *src, uint8_t *de
 void spi_print(const mp_print_t *print, const spi_t *spi_obj, bool legacy);
 const spi_t *spi_from_mp_obj(mp_obj_t o);
 
+typedef struct _spi_bdev_obj_t {
+    const spi_t *spi;
+    int32_t baudrate;
+    uint8_t polarity;
+    uint8_t phase;
+    uint8_t bits;
+    uint8_t firstbit;
+} spi_bdev_obj_t;
+
+extern const mp_spi_proto_t spi_bdev_proto;
+
 #endif // MICROPY_INCLUDED_STM32_SPI_H
