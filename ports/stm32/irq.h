@@ -126,6 +126,10 @@ MP_DECLARE_CONST_FUN_OBJ_0(pyb_irq_stats_obj);
 // get dropped. The handling for each character only consumes about 0.5 usec
 #define IRQ_PRI_UART            NVIC_EncodePriority(NVIC_PRIORITYGROUP_4, 1, 0)
 
+// Timer1 should be higher than USB Mass Storage to ensure smooth PWM
+#define IRQ_PRI_TIM1            3
+#define IRQ_SUBPRI_TIM1                     0
+
 // SDIO must be higher priority than DMA for SDIO DMA transfers to work.
 #define IRQ_PRI_SDIO            NVIC_EncodePriority(NVIC_PRIORITYGROUP_4, 4, 0)
 
