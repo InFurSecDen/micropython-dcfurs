@@ -112,6 +112,9 @@ MP_DECLARE_CONST_FUN_OBJ_0(pyb_irq_stats_obj);
 // that rely on the flash storage.
 #define IRQ_PRI_FLASH           NVIC_EncodePriority(NVIC_PRIORITYGROUP_4, 2, 0)
 
+// Timer1 should be higher than USB Mass Storage to ensure smooth PWM
+#define IRQ_PRI_TIM1           NVIC_EncodePriority(NVIC_PRIORITYGROUP_4, 3, 0)
+
 // SDIO must be higher priority than DMA for SDIO DMA transfers to work.
 #define IRQ_PRI_SDIO            NVIC_EncodePriority(NVIC_PRIORITYGROUP_4, 4, 0)
 
