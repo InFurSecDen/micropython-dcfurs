@@ -208,11 +208,11 @@ pyb_flash_untar_vfs(fs_user_mount_t *vfs)
     }
     /* Uncompressed TAR */
     else {
-        size_t offset;
-        for (offset = 0; offset < flash_tarball_size; offset += TAR_BLOCK_SIZE) {
-            memcpy(state.buf, &flash_tarball_data[flash_tarball_size], TAR_BLOCK_SIZE);
-            if (!untar_process_block(vfs, &state)) break;
-        }
+        // size_t offset;
+        // for (offset = 0; offset < flash_tarball_size; offset += TAR_BLOCK_SIZE) {
+        //     memcpy(state.buf, &flash_tarball_data[flash_tarball_size], TAR_BLOCK_SIZE);
+        //     if (!untar_process_block(vfs, &state)) break;
+        // }
     }
 
     if (state.fsize) {
